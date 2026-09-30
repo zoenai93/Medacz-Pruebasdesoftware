@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del taller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Talleres</a>
+        <a href="registro.html">Iniciar sesión</a>
+    </nav>
+</header>
+
+<main class="contenedor detalle">
+
+    <h1 id="titulo"></h1>
+
+    <div class="informacion">
+        <p id="instructor"></p>
+        <p id="fecha"></p>
+        <p id="asistentes"></p>
+    </div>
+</main>
+
+<script>
+
+const talleres = {
+    python: {
+        titulo: "Introducción a Python",
+        instructor: "Ing. María López",
+        fecha: "2026-08-10",
+        registrados: 130,
+        capacidad: 25
+    },
+
+    redes: {
+        titulo: "Fundamentos de Redes",
+        instructor: "Ing. Carlos Ramírez",
+        fecha: "2026-08-12",
+        registrados: 63,
+        capacidad: 30
+    },
+
+    bases: {
+        titulo: "Diseño de Bases de Datos",
+        instructor: "Ing. Ana Torres",
+        fecha: "2026-08-14",
+        registrados: 25,
+        capacidad: 20
+    }
+};
+
+const parametros = new URLSearchParams(window.location.search);
+
+const tipo = parametros.get("taller") || "python";
+
+const taller = talleres[tipo];
+
+document.getElementById("titulo").textContent = taller.titulo;
+
+document.getElementById("instructor").textContent =
+    "Instructor: " + taller.instructor;
+
+document.getElementById("fecha").textContent =
+    "Fecha: " + taller.fecha;
+
+document.getElementById("asistentes").textContent =
+    "Asistentes registrados: " +
+    taller.registrados +
+    " / " +
+    taller.capacidad;
+
+document.getElementById("formulario").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    taller.registrados++;
+
+    document.getElementById("asistentes").textContent =
+        "Asistentes registrados: " +
+        taller.registrados +
+        " / " +
+        taller.capacidad;
+
+    this.reset();
+});
+
+</script>
+</body>
+</html>
