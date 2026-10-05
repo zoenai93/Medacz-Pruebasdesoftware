@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar asistencia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Talleres</a>
+        <a href="registro.html">Registrar asistencia</a>
+    </nav>
+</header>
+
+<main class="contenedor">
+
+    <h1>Registrar asistencia</h1>
+
+    <form id="formulario">
+
+        <input
+            type="text"
+            id="nombre"
+            placeholder="Nombre completo"
+            required
+        >
+
+        <input
+            type="text"
+            id="boleta"
+            placeholder="Boleta"
+            required
+        >
+
+        <button type="submit">
+            Registrar
+        </button>
+
+    </form>
+
+</main>
+
+<script>
+
+document.getElementById("formulario").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    alert("Asistencia registrada");
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+
+</html>
