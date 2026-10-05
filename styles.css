@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f8f8;
+    color: #111;
+}
+
+header {
+    height: 56px;
+    background: white;
+    border-bottom: 1px solid #dddddd;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+    padding-left: 33px;
+}
+
+nav a {
+    color: #0070f3;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.contenedor {
+    width: 768px;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+h1 {
+    font-size: 31px;
+    margin: 0 0 25px;
+}
+
+h2 {
+    font-size: 23px;
+}
+.descripcion {
+    margin-bottom: 24px;
+    color: #444;
+}
+
+.talleres {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.tarjeta {
+    background: white;
+    border: 1px solid #d7d7d7;
+    border-radius: 7px;
+    padding: 39px 16px 24px;
+    min-height: 212px;
+    text-decoration: none;
+    color: #111;
+}
+
+.tarjeta h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.25;
+}
+
+.tarjeta p {
+    font-size: 15px;
+    margin: 0 0 16px;
+}
+
+.tarjeta:hover {
+    box-shadow: 0 2px 7px rgba(0,0,0,0.08);
+}
+
+.login {
+    padding-top: 60px;
+}
+
+form {
+    width: 321px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+input {
+    height: 34px;
+    border: 1px solid #c9c9c9;
+    border-radius: 3px;
+    padding: 0 10px;
+    font-size: 13px;
+}
+
+input:focus {
+    outline: 2px solid #111;
+}
+
+button {
+    height: 35px;
+    border: none;
+    border-radius: 3px;
+    background: #0879ee;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #006bdc;
+}
+
+.informacion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 46px;
+}
+
+.informacion p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.detalle h2 {
+    margin-bottom: 32px;
+}
+
+.alumnos {
+    margin-top: 28px;
+    margin-bottom: 20px !important;
+}
+
+.no-autorizado {
+    color: #d32f2f;
+}
+
+@media (max-width: 800px) {
+
+    .talleres {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        width: 100%;
+    }
+}
